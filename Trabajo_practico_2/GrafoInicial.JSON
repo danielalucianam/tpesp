@@ -1,0 +1,384 @@
+{
+  "ciudades": [
+    {
+      "nombre": "Tartagal, Salta",
+      "latitud": -22.5333,
+      "longitud": -63.8167,
+      "vecinos": [],
+      "cantVecinos": 0,
+      "longitudCamino": 0,
+      "visitado": false
+    },
+    {
+      "nombre": "San Salvador de Jujuy",
+      "latitud": -24.1833,
+      "longitud": -65.3,
+      "vecinos": [],
+      "cantVecinos": 0,
+      "longitudCamino": 0,
+      "visitado": false
+    },
+    {
+      "nombre": "Río Cuarto, Córdoba",
+      "latitud": -33.1333,
+      "longitud": -64.35,
+      "vecinos": [],
+      "cantVecinos": 0,
+      "longitudCamino": 0,
+      "visitado": false
+    },
+    {
+      "nombre": "Resistencia, Chaco",
+      "latitud": -27.45,
+      "longitud": -58.9833,
+      "vecinos": [],
+      "cantVecinos": 0,
+      "longitudCamino": 0,
+      "visitado": false
+    },
+    {
+      "nombre": "Bahía Blanca, Buenos Aires",
+      "latitud": -38.7167,
+      "longitud": -62.2833,
+      "vecinos": [],
+      "cantVecinos": 0,
+      "longitudCamino": 0,
+      "visitado": false
+    },
+    {
+      "nombre": "Mar del Plata, Buenos Aires",
+      "latitud": -38.0,
+      "longitud": -57.55,
+      "vecinos": [],
+      "cantVecinos": 0,
+      "longitudCamino": 0,
+      "visitado": false
+    },
+    {
+      "nombre": "Tandil, Buenos Aires",
+      "latitud": -37.3167,
+      "longitud": -59.15,
+      "vecinos": [],
+      "cantVecinos": 0,
+      "longitudCamino": 0,
+      "visitado": false
+    },
+    {
+      "nombre": "La Plata, Buenos Aires",
+      "latitud": -34.9314,
+      "longitud": -57.9489,
+      "vecinos": [],
+      "cantVecinos": 0,
+      "longitudCamino": 0,
+      "visitado": false
+    },
+    {
+      "nombre": "Rosario, Santa Fe",
+      "latitud": -32.9511,
+      "longitud": -60.6664,
+      "vecinos": [],
+      "cantVecinos": 0,
+      "longitudCamino": 0,
+      "visitado": false
+    },
+    {
+      "nombre": "Santa Rosa, La Pampa",
+      "latitud": -36.6167,
+      "longitud": -64.2833,
+      "vecinos": [],
+      "cantVecinos": 0,
+      "longitudCamino": 0,
+      "visitado": false
+    },
+    {
+      "nombre": "San Rafael, Mendoza",
+      "latitud": -34.6,
+      "longitud": -68.3333,
+      "vecinos": [],
+      "cantVecinos": 0,
+      "longitudCamino": 0,
+      "visitado": false
+    },
+    {
+      "nombre": "San Carlos de Bariloche, Río Negro",
+      "latitud": -41.15,
+      "longitud": -71.3,
+      "vecinos": [],
+      "cantVecinos": 0,
+      "longitudCamino": 0,
+      "visitado": false
+    },
+    {
+      "nombre": "Comodoro Rivadavia, Chubut",
+      "latitud": -45.6083,
+      "longitud": -67.75,
+      "vecinos": [],
+      "cantVecinos": 0,
+      "longitudCamino": 0,
+      "visitado": false
+    },
+    {
+      "nombre": "Río Gallegos, Santa Cruz",
+      "latitud": -51.6333,
+      "longitud": -69.2167,
+      "vecinos": [],
+      "cantVecinos": 0,
+      "longitudCamino": 0,
+      "visitado": false
+    },
+    {
+      "nombre": "Ushuaia, Tierra del Fuego",
+      "latitud": -54.8,
+      "longitud": -68.3,
+      "vecinos": [],
+      "cantVecinos": 0,
+      "longitudCamino": 0,
+      "visitado": false
+    },
+    {
+      "nombre": "Posadas, Misiones",
+      "latitud": -27.3833,
+      "longitud": -55.8833,
+      "vecinos": [],
+      "cantVecinos": 0,
+      "longitudCamino": 0,
+      "visitado": false
+    },
+    {
+      "nombre": "Concordia, Entre Ríos",
+      "latitud": -31.4,
+      "longitud": -58.0333,
+      "vecinos": [],
+      "cantVecinos": 0,
+      "longitudCamino": 0,
+      "visitado": false
+    },
+    {
+      "nombre": "La Rioja, La Rioja",
+      "latitud": -29.4333,
+      "longitud": -66.85,
+      "vecinos": [],
+      "cantVecinos": 0,
+      "longitudCamino": 0,
+      "visitado": false
+    },
+    {
+      "nombre": "Recreo, Catamarca",
+      "latitud": -29.2667,
+      "longitud": -65.0667,
+      "vecinos": [],
+      "cantVecinos": 0,
+      "longitudCamino": 0,
+      "visitado": false
+    },
+    {
+      "nombre": "San Miguel de Tucumán, Tucumán",
+      "latitud": -26.8167,
+      "longitud": -65.2167,
+      "vecinos": [],
+      "cantVecinos": 0,
+      "longitudCamino": 0,
+      "visitado": false
+    },
+    {
+      "nombre": "Valcheta, Río Negro",
+      "latitud": -40.7,
+      "longitud": -66.15,
+      "vecinos": [],
+      "cantVecinos": 0,
+      "longitudCamino": 0,
+      "visitado": false
+    },
+    {
+      "nombre": "Lago Posadas, Santa Cruz",
+      "latitud": -47.5333,
+      "longitud": -71.75,
+      "vecinos": [],
+      "cantVecinos": 0,
+      "longitudCamino": 0,
+      "visitado": false
+    }
+  ],
+  "rutas": [
+    {
+      "v1": 14,
+      "v2": 13,
+      "longitud": 200,
+      "peaje": false
+    },
+    {
+      "v1": 13,
+      "v2": 12,
+      "longitud": 400,
+      "peaje": true
+    },
+    {
+      "v1": 11,
+      "v2": 12,
+      "longitud": 300,
+      "peaje": false
+    },
+    {
+      "v1": 20,
+      "v2": 12,
+      "longitud": 300,
+      "peaje": false
+    },
+    {
+      "v1": 4,
+      "v2": 20,
+      "longitud": 150,
+      "peaje": false
+    },
+    {
+      "v1": 4,
+      "v2": 9,
+      "longitud": 100,
+      "peaje": false
+    },
+    {
+      "v1": 4,
+      "v2": 6,
+      "longitud": 100,
+      "peaje": true
+    },
+    {
+      "v1": 5,
+      "v2": 6,
+      "longitud": 50,
+      "peaje": false
+    },
+    {
+      "v1": 10,
+      "v2": 9,
+      "longitud": 200,
+      "peaje": false
+    },
+    {
+      "v1": 2,
+      "v2": 9,
+      "longitud": 200,
+      "peaje": true
+    },
+    {
+      "v1": 7,
+      "v2": 6,
+      "longitud": 100,
+      "peaje": false
+    },
+    {
+      "v1": 2,
+      "v2": 8,
+      "longitud": 150,
+      "peaje": false
+    },
+    {
+      "v1": 8,
+      "v2": 7,
+      "longitud": 150,
+      "peaje": false
+    },
+    {
+      "v1": 8,
+      "v2": 16,
+      "longitud": 100,
+      "peaje": false
+    },
+    {
+      "v1": 2,
+      "v2": 17,
+      "longitud": 200,
+      "peaje": false
+    },
+    {
+      "v1": 17,
+      "v2": 18,
+      "longitud": 50,
+      "peaje": true
+    },
+    {
+      "v1": 16,
+      "v2": 7,
+      "longitud": 150,
+      "peaje": true
+    },
+    {
+      "v1": 16,
+      "v2": 3,
+      "longitud": 200,
+      "peaje": false
+    },
+    {
+      "v1": 15,
+      "v2": 3,
+      "longitud": 100,
+      "peaje": false
+    },
+    {
+      "v1": 19,
+      "v2": 18,
+      "longitud": 100,
+      "peaje": false
+    },
+    {
+      "v1": 1,
+      "v2": 19,
+      "longitud": 100,
+      "peaje": false
+    },
+    {
+      "v1": 1,
+      "v2": 0,
+      "longitud": 50,
+      "peaje": false
+    },
+    {
+      "v1": 3,
+      "v2": 19,
+      "longitud": 300,
+      "peaje": true
+    },
+    {
+      "v1": 17,
+      "v2": 10,
+      "longitud": 250,
+      "peaje": false
+    },
+    {
+      "v1": 13,
+      "v2": 21,
+      "longitud": 300,
+      "peaje": false
+    },
+    {
+      "v1": 12,
+      "v2": 21,
+      "longitud": 150,
+      "peaje": false
+    },
+    {
+      "v1": 11,
+      "v2": 21,
+      "longitud": 400,
+      "peaje": false
+    },
+    {
+      "v1": 11,
+      "v2": 20,
+      "longitud": 150,
+      "peaje": false
+    },
+    {
+      "v1": 9,
+      "v2": 20,
+      "longitud": 200,
+      "peaje": true
+    },
+    {
+      "v1": 0,
+      "v2": 3,
+      "longitud": 350,
+      "peaje": false
+    }
+  ]
+}
