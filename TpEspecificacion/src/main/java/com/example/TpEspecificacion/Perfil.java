@@ -63,7 +63,7 @@ public class Perfil extends VerticalLayout implements View {
 		
 		public VerticalLayout nuevaAreaPost() {
 			VerticalLayout componente = new VerticalLayout();
-			Post p = new Post();
+		
 			TextArea tf = new TextArea("Escribe el contenido");
 			
 			tf.setMaxLength(100);
@@ -73,10 +73,11 @@ public class Perfil extends VerticalLayout implements View {
 					Button button = new Button("Aceptar", new Button.ClickListener(){
 				@Override
 				public void buttonClick(ClickEvent event) {
+					Post p = new Post();
 					p.setContenido(tf.getValue());
 					DAO.SavePost(p);
 					tf.clear();
-					nuevaAreaPost();
+					
 				}
 			});
 			componente.addComponents(tf,button);
