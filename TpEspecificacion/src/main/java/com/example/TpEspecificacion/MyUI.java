@@ -2,6 +2,7 @@ package com.example.TpEspecificacion;
 
 import javax.servlet.annotation.WebServlet;
 
+import com.vaadin.annotations.StyleSheet;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.navigator.Navigator;
@@ -23,6 +24,7 @@ import com.vaadin.ui.VerticalLayout;
  * overridden to add component to the user interface and initialize non-component functionality.
  */
 @Theme("mytheme")
+@StyleSheet({"https://fonts.googleapis.com/css?family=Slabo+27px"})
 public class MyUI extends UI {
 	/**
 	 * 
@@ -40,7 +42,9 @@ public class MyUI extends UI {
 
     	navigator.addView(IngresoUsuario.NAME, new IngresoUsuario());
     	navigator.addView(Perfil.NAME, new Perfil());
+    	navigator.addView(MenuPrincipal.NAME, new MenuPrincipal());
         navigator.addView(RegistroUsuario.NAME, new RegistroUsuario());
+        navigator.addView(VisualizarPost.NAME, new VisualizarPost());
        
       }
 

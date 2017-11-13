@@ -30,9 +30,47 @@
 // Example variants can be copy/pasted from https://vaadin.com/wiki/-/wiki/Main/Valo+Examples
 
 @import "../valo/valo.scss";
-
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
+@import 'font-awesome-variants';
 @mixin mytheme {
   @include valo;
+  
+    
+.estilo-uno{
+   
+    font-size: 30px;
+    width:200px;
+    height: 200px;
+    background-color:cornflowerblue;
+    color:black;
+    border-radius: 5px;
+   
+    font-family: 'Slabo 27px', serif;
+    margin-left: auto;
+    cursor: pointer;
+}
 
-  // Insert your own theme rules here
+.estilo-dos{
+    font-size: 30px;
+    width:200px;
+    height: 200px;
+    background-color: palegreen;
+    color:black;
+    border-radius: 5px;
+    font-family: 'Slabo 27px', serif;
+    margin-left: auto;
+    cursor: pointer;
+        
+    }
+    .font-awesome-variants{
+        font-size: 30px;
+    }
+    
+    .layout-estilo{
+        margin-bottom: 30px;
+        margin-left: 200px;
+        margin-right: 30px;
+        margin-top: 30px;
+       
+    }
 }

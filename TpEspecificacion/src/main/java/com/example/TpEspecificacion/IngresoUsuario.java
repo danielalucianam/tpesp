@@ -36,7 +36,7 @@ public class IngresoUsuario extends VerticalLayout implements View {
 		            public void buttonClick(ClickEvent event) {
 						
 						//if(Usuario.existeUsuario(DAO.getUsuarios(), usuario.getValue(), password.getValue()))
-						getUI().getNavigator().navigateTo(Perfil.NAME);
+						getUI().getNavigator().navigateTo(MenuPrincipal.NAME);
 		            
 						//else 
 						//Notification.show("El usuario ingresado no es válido");

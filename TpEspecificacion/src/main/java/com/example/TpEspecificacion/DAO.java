@@ -38,5 +38,15 @@ package com.example.TpEspecificacion;
 		        return result;
 		
 	}
+		public static List<Post> getPosts(){
+			
+			EntityManager entityManager = entityManagerFactory.createEntityManager();
+			entityManager.getTransaction().begin();
+	        List<Post> result = entityManager.createQuery( "from Post", Post.class ).getResultList();
+			entityManager.getTransaction().commit();
+	        entityManager.close();
+	        return result;
+	
+}
 
 }

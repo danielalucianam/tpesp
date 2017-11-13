@@ -13229,3 +13229,38 @@ div.v-layout.v-horizontal.v-widget {
 	width: 19px;
 	overflow: hidden;
 }
+
+.mytheme .estilo-uno {
+	font-size: 30px;
+	width: 200px;
+	height: 200px;
+	background-color: cornflowerblue;
+	color: black;
+	border-radius: 5px;
+	font-family: "Slabo 27px", serif;
+	margin-left: auto;
+	cursor: pointer;
+}
+
+.mytheme .estilo-dos {
+	font-size: 30px;
+	width: 200px;
+	height: 200px;
+	background-color: palegreen;
+	color: black;
+	border-radius: 5px;
+	font-family: "Slabo 27px", serif;
+	margin-left: auto;
+	cursor: pointer;
+}
+
+.mytheme .font-awesome-variants {
+	font-size: 30px;
+}
+
+.mytheme .layout-estilo {
+	margin-bottom: 30px;
+	margin-left: 200px;
+	margin-right: 30px;
+	margin-top: 30px;
+}
