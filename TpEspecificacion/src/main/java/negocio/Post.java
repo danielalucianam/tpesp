@@ -1,4 +1,4 @@
-package com.example.TpEspecificacion;
+package negocio;
 
 import java.time.LocalDate;
 

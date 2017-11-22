@@ -1,4 +1,4 @@
-package com.example.TpEspecificacion;
+package UI;
 
 import javax.servlet.annotation.WebServlet;
 
@@ -12,6 +12,9 @@ import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
+
+import negocio.Perfil;
+
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
@@ -39,17 +42,19 @@ public class MyUI extends UI {
     	getPage().setTitle("Ejemplo de navegación");
     	
     	navigator = new Navigator(this, this);
-
     	navigator.addView(IngresoUsuario.NAME, new IngresoUsuario());
     	navigator.addView(Perfil.NAME, new Perfil());
     	navigator.addView(MenuPrincipal.NAME, new MenuPrincipal());
         navigator.addView(RegistroUsuario.NAME, new RegistroUsuario());
-        navigator.addView(VisualizarPost.NAME, new VisualizarPost());
-       
+        navigator.addView(VisualizadorEmisiones.NAME, new VisualizadorEmisiones());
+ 
       }
-
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
     @VaadinServletConfiguration(ui = MyUI.class, productionMode = false)
     public static class MyUIServlet extends VaadinServlet {
+    }
+    
+    public  Navigator getNavigator() {
+    	return navigator;
     }
 }

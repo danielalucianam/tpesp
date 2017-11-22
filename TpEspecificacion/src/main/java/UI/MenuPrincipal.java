@@ -1,4 +1,4 @@
-package com.example.TpEspecificacion;
+package UI;
 
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
@@ -9,6 +9,8 @@ import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.themes.ValoTheme;
+
+import negocio.Perfil;
 
 public class MenuPrincipal  extends VerticalLayout implements View {
 
@@ -26,8 +28,9 @@ public class MenuPrincipal  extends VerticalLayout implements View {
 				@Override
 	            public void buttonClick(ClickEvent event) {
 					
+					getUI().getNavigator().addView(VisualizarPost.NAME, new VisualizarPost());
 					getUI().getNavigator().navigateTo(VisualizarPost.NAME);
-					}
+				}
 					
 	            
 	        });
@@ -59,9 +62,21 @@ public class MenuPrincipal  extends VerticalLayout implements View {
 		hLayout.addStyleName("layout-estilo");
 		addComponent(hLayout);
 		
+		
 		HorizontalLayout vLayout = new HorizontalLayout();
 		
-		Button emisiones = new Button("Ver emisiones");
+		Button emisiones = new Button("Ver emisiones", new Button.ClickListener(){
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void buttonClick(ClickEvent event) {
+				getUI().getNavigator().navigateTo(VisualizadorEmisiones.NAME);
+				
+			}
+		});
 		emisiones.setIcon(FontAwesome.OBJECT_GROUP);
 		emisiones.addStyleName("estilo-dos");
 		emisiones.addStyleName("font-awesome-variants");

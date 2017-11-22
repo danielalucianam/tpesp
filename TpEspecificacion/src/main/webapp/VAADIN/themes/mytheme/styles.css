@@ -13264,3 +13264,57 @@ div.v-layout.v-horizontal.v-widget {
 	margin-right: 30px;
 	margin-top: 30px;
 }
+
+.mytheme .estilos-post {
+	margin-top: 85px;
+	width: 100%;
+	height: 100px;
+	border-radius: 5px;
+	border: 2px solid black;
+	font-family: "Slabo 27px", serif;
+	font-size: 15px;
+	background-color: #DFFE96;
+}
+
+.mytheme .contenedor-estilos {
+	font-size: 0;
+	display: inline-block;
+}
+
+.mytheme .hl-estilo {
+	border-radius: 5px;
+	font-family: "Slabo 27px", serif;
+	font-size: 50px;
+	width: 100%;
+	height: 80px;
+	position: fixed;
+	margin-top: 0;
+	background-color: #A3E6FC;
+}
+
+.mytheme .star-rating a {
+	float: right;
+	color: #95a5a6;
+	text-decoration: none;
+}
+
+.mytheme .star-rating a:hover {
+	color: #f39c12;
+}
+
+.mytheme .star-rating a:hover ~ a {
+	color: #f39c12;
+}
+
+.mytheme .animacion {
+	width: 200px;
+	height: 250px;
+	font-size: 40px;
+	background-color: blueviolet;
+	border-radius: 5px;
+	border: solid 1px black;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+}

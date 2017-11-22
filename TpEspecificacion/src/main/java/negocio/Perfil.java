@@ -1,4 +1,4 @@
-package com.example.TpEspecificacion;
+package negocio;
 
 import java.io.File;
 
@@ -14,12 +14,15 @@ import com.vaadin.ui.GridLayout;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.HorizontalSplitPanel;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.RichTextArea;
 import com.vaadin.ui.TextArea;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.Tree;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.themes.ValoTheme;
+
+import UI.MenuPrincipal;
 
 
 public class Perfil extends VerticalLayout implements View {
@@ -64,11 +67,11 @@ public class Perfil extends VerticalLayout implements View {
 		public VerticalLayout nuevaAreaPost() {
 			VerticalLayout componente = new VerticalLayout();
 		
-			TextArea tf = new TextArea("Escribe el contenido");
+			TextArea tf = new TextArea();
+			tf.setMaxLength(300);
 			
-			tf.setMaxLength(100);
-			tf.setHeight("200px");
-			tf.setWidth("300px");
+			
+		
 			
 					Button button = new Button("Aceptar", new Button.ClickListener(){
 				@Override

@@ -1,4 +1,4 @@
-package com.example.TpEspecificacion;
+package UI;
 
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
@@ -9,6 +9,9 @@ import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Button.ClickEvent;
+
+import negocio.DAO;
+import negocio.Usuario;
 
 public class RegistroUsuario extends VerticalLayout implements View {
 

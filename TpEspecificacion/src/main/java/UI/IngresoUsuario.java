@@ -1,4 +1,4 @@
-package com.example.TpEspecificacion;
+package UI;
 
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
