@@ -23,6 +23,12 @@ public class DAOPostHibernate extends DAOHibernate<Post> implements DAOPost{
 
 	@Override
 	public List<Post> getAllPostof(Usuario u) {
+		
+		return null;
+	}
+
+	@Override
+	public Post getPost() {
 		// TODO Auto-generated method stub
 		return null;
 	}

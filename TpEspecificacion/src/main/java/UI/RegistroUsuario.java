@@ -8,26 +8,39 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.themes.ValoTheme;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.Notification;
 
 import negocio.DAO;
 import negocio.Usuario;
+import service.UsuarioService;
 
 public class RegistroUsuario extends VerticalLayout implements View {
 
+	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	public static final String NAME = "Registro";
+	private UsuarioService usuarioService;
+	
 	public	RegistroUsuario() {
+		usuarioService = UsuarioService.getService();
+		init();
 		setSizeFull();
+		
+        
+}
+	private void init() {
+
 		
 		VerticalLayout layout = new VerticalLayout();
 		addComponent(layout);
 		
-		TextField usuario = new TextField("Username");
-		 usuario.setIcon(FontAwesome.USER);
+		TextField username = new TextField("Username");
+		 username.setIcon(FontAwesome.USER);
 		 
 		TextField direccionEmail = new TextField("Correo electrónico");
 		direccionEmail.setIcon(FontAwesome.ENVELOPE);
@@ -39,22 +52,35 @@ public class RegistroUsuario extends VerticalLayout implements View {
 			
 		
 		
-		Button button = new Button("Aceptar", new Button.ClickListener(){
+		Button registrarseButton = new Button("Aceptar", new Button.ClickListener(){
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
 			@Override
 			public void buttonClick(ClickEvent event) {
-				getUI().getNavigator().navigateTo(IngresoUsuario.NAME);
-				Usuario nuevo = new Usuario(usuario.getValue(),direccionEmail.getValue(),cuilOcuit.getValue(),password.getValue());
-				DAO.SaveUsuario(nuevo);
-			}
+				
+				if(!usuarioService.isUsernameInUse(username.getValue())){
+					usuarioService.altaUsuario(direccionEmail.getValue(), password.getValue(), cuilOcuit.getValue(), username.getValue());
+					
+					Notification n = new Notification("Usuario Registrado", ValoTheme.NOTIFICATION_SUCCESS);
+					
+					getUI().getNavigator().navigateTo(IngresoUsuario.NAME);
+				}
+			
+				else
+					Notification.show("Username ya en uso", Notification.Type.ERROR_MESSAGE);
+				}
+			
 		});
-		 button.setIcon(FontAwesome.CHECK);
-		layout.addComponents(usuario,direccionEmail,cuilOcuit,password,button);
+		 registrarseButton.setIcon(FontAwesome.CHECK);
+		layout.addComponents(username,direccionEmail,cuilOcuit,password,registrarseButton);
 		setComponentAlignment(layout, Alignment.BOTTOM_CENTER);
 		addComponent(layout);
 		layout.setMargin(true);
         layout.setSpacing(true);
-        
-}
+	}
 	
 		
 

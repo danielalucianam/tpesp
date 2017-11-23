@@ -10,8 +10,6 @@ import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.themes.ValoTheme;
 
-import negocio.Perfil;
-
 public class MenuPrincipal  extends VerticalLayout implements View {
 
 	/**

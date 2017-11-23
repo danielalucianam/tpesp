@@ -8,46 +8,70 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.themes.ValoTheme;
+
+import service.UsuarioService;
+
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.PasswordField;
 
 public class IngresoUsuario extends VerticalLayout implements View {
+		/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 		public static final String NAME = "";
+		private UsuarioService usuarioService;
 			public IngresoUsuario() {
-				setSizeFull();
+				usuarioService = UsuarioService.getService();
+				init();
+				this.setSizeFull(); 
+		    
+}
+			private void init() {
+				
 				
 				final VerticalLayout layout = new VerticalLayout();
 				addComponent(layout);
 				
-				TextField usuario = new TextField("Usuario");
-				 usuario.setIcon(FontAwesome.USER);
-				
+				TextField username= new TextField("Usuario");
+				PasswordField password = new PasswordField("Contraseña");
 		        
-		        PasswordField password = new PasswordField("Contraseña");
+		        
+		        username.setIcon(FontAwesome.USER);
 		        password.setIcon(FontAwesome.LOCK);
 		        
 		        
 				
-		        Button button = new Button("Ingresar",
+		        Button ingresarButton = new Button("Ingresar",
 		                new Button.ClickListener() {
 		           
+					/**
+							 * 
+							 */
+							private static final long serialVersionUID = 1L;
+
 					@Override
 		            public void buttonClick(ClickEvent event) {
 						
-						//if(Usuario.existeUsuario(DAO.getUsuarios(), usuario.getValue(), password.getValue()))
+						if(usuarioService.loginUsuario(username.getValue(), password.getValue()))
 						getUI().getNavigator().navigateTo(MenuPrincipal.NAME);
 		            
-						//else 
-						//Notification.show("El usuario ingresado no es válido");
+						else 
+						Notification.show("El usuario ingresado no es válido");
 					
 					}
 		        });
 		        
-		        button.setIcon(FontAwesome.SIGN_IN);
+		       ingresarButton.setIcon(FontAwesome.SIGN_IN);
 		        
-		        Button link = new Button("Registrarme",  new Button.ClickListener() {
+		        Button registroButton = new Button("Registrarme",  new Button.ClickListener() {
 			           
+						/**
+					 * 
+					 */
+					private static final long serialVersionUID = 1L;
+
 						@Override
 			            public void buttonClick(ClickEvent event) {
 							
@@ -56,17 +80,16 @@ public class IngresoUsuario extends VerticalLayout implements View {
 							
 			            
 			        });
-				link.addStyleName(ValoTheme.BUTTON_LINK);
+				registroButton.addStyleName(ValoTheme.BUTTON_LINK);
 		      
-				layout.addComponents(usuario, password,button, link);
+				layout.addComponents(username, password,ingresarButton, registroButton);
+				
 		        layout.setMargin(true);
 		        layout.setSpacing(true);
 		      
 				
 		    
-		        
-		    
-}
+			}
 			@Override
 			public void enter(ViewChangeEvent event) {
 				// TODO Auto-generated method stub

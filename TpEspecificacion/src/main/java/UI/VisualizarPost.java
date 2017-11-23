@@ -15,6 +15,7 @@ import com.vaadin.ui.themes.ValoTheme;
 
 import negocio.DAO;
 import negocio.Post;
+import service.PostService;
 
 public class VisualizarPost extends VerticalLayout implements View {
 	/**
@@ -22,9 +23,15 @@ public class VisualizarPost extends VerticalLayout implements View {
 	 */
 	private static final long serialVersionUID = 1L;
 	public static final String NAME = "VisualizarPosts";
+	private PostService postService;
 	public VisualizarPost() {
+		 postService = PostService.getService();
 		setSizeFull();
 		
+		
+		}
+	
+	private void init() {
 		HorizontalLayout horizontalL = new HorizontalLayout();
 		Label label = new Label ();
 		label.setValue("Posts");
@@ -33,7 +40,7 @@ public class VisualizarPost extends VerticalLayout implements View {
 		horizontalL.addStyleName("horizontal");
 		addComponent(horizontalL);
 		VerticalLayout vLayout = new VerticalLayout();
-		List<Post> posts = DAO.getPosts();
+		List<Post> posts = postService.obtenerPosts();
 		HorizontalLayout hLayout= new HorizontalLayout();
 		for (Post p: posts) {
 			Label lbl = new Label(p.getContenido()+'\n'+"Creado el 14/11/2017 por autor-anonymus", ContentMode.PREFORMATTED); 
@@ -42,13 +49,13 @@ public class VisualizarPost extends VerticalLayout implements View {
 			
 			
 			
-			/*CustomLayout content = new CustomLayout("calificacion");
+			CustomLayout content = new CustomLayout("calificacion");
 			content.setSizeUndefined();
 			content.addComponent(new Label(),"star-rating");
 			
 		
-			hLayout.addComponents(content);*/
-			/*btn.setIcon(FontAwesome.STAR);
+			hLayout.addComponents(content);
+			btn.setIcon(FontAwesome.STAR);
 			btn.addStyleName("calificacion-estilos");
 			btn.addStyleName(ValoTheme.BUTTON_BORDERLESS);
 			Button btn1 = new Button();
@@ -67,8 +74,8 @@ public class VisualizarPost extends VerticalLayout implements View {
 			btn4.setIcon(FontAwesome.STAR);
 			btn4.addStyleName("calificacion-estilos");
 			btn4.addStyleName(ValoTheme.BUTTON_BORDERLESS);
-			hLayout.addStyleName("contenedor-estilos");*/
-			
+			hLayout.addStyleName("contenedor-estilos");
+			hLayout.addComponents(btn,btn1,btn2,btn3,btn4);
 			vLayout.addComponents(lbl,hLayout);
 			
 		}
@@ -76,7 +83,7 @@ public class VisualizarPost extends VerticalLayout implements View {
 		
 		addComponent(vLayout);
 		
-		}
+	}
 	@Override
 	public void enter(ViewChangeEvent event) {
 		// TODO Auto-generated method stub

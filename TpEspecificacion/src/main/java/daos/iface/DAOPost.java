@@ -8,7 +8,7 @@ import negocio.Usuario;
 public interface DAOPost extends DAO<Post> {
 	
 	public List<Post> getAll();
-	
+	public Post getPost();
 	public  List<Post> getAllPostof(Usuario u);
 
 }

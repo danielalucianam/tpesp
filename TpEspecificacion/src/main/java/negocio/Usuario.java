@@ -72,12 +72,5 @@ public class Usuario {
 		return this.id;
 	}
 	
-	public static boolean existeUsuario(List<Usuario> usuarios, String username, String contraseña) {
-		for ( Usuario usuario : usuarios ) {
-			if (usuario.getUsername().equals(username) && usuario.getContraseña().equals(contraseña)) {
-				return true;
-			}
-		}
-		return false;
-	}
+	
 }
