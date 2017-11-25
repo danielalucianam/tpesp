@@ -26,8 +26,7 @@ import com.vaadin.ui.VerticalLayout;
 @Theme("mytheme")
 @StyleSheet({"https://fonts.googleapis.com/css?family=Slabo+27px"})
 public class MyUI extends UI {
-	
-	private static final long serialVersionUID = 1L;
+		private static final long serialVersionUID = 1L;
 	Navigator navigator;
 	public static final String NAME = "";
 	
