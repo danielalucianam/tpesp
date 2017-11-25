@@ -27,7 +27,7 @@ public class VisualizarPost extends VerticalLayout implements View {
 	public VisualizarPost() {
 		 postService = PostService.getService();
 		setSizeFull();
-		
+		init();
 		
 		}
 	
@@ -35,29 +35,26 @@ public class VisualizarPost extends VerticalLayout implements View {
 		HorizontalLayout horizontalL = new HorizontalLayout();
 		Label label = new Label ();
 		label.setValue("Posts");
-		label.addStyleName("hl-estilo");
+		label.setStyleName("hl-estilo");
 		horizontalL.addComponent(label);
-		horizontalL.addStyleName("horizontal");
 		addComponent(horizontalL);
 		VerticalLayout vLayout = new VerticalLayout();
 		List<Post> posts = postService.obtenerPosts();
 		HorizontalLayout hLayout= new HorizontalLayout();
+	
 		for (Post p: posts) {
 			Label lbl = new Label(p.getContenido()+'\n'+"Creado el 14/11/2017 por autor-anonymus", ContentMode.PREFORMATTED); 
 			lbl.addStyleName("estilos-post");
-			Button btn = new Button();
-			
-			
-			
-			CustomLayout content = new CustomLayout("calificacion");
-			content.setSizeUndefined();
-			content.addComponent(new Label(),"star-rating");
 			
 		
-			hLayout.addComponents(content);
-			btn.setIcon(FontAwesome.STAR);
-			btn.addStyleName("calificacion-estilos");
-			btn.addStyleName(ValoTheme.BUTTON_BORDERLESS);
+				for(int i = 0; i<5;i++) {
+					Button btn = new Button();
+					btn.setIcon(FontAwesome.STAR);
+					btn.addStyleName("calificacion-estilos");
+					btn.addStyleName(ValoTheme.BUTTON_BORDERLESS);
+					hLayout.addComponents(btn);
+				}
+		/*	
 			Button btn1 = new Button();
 			btn1.setIcon(FontAwesome.STAR);
 			btn1.addStyleName("calificacion-estilos");
@@ -74,10 +71,10 @@ public class VisualizarPost extends VerticalLayout implements View {
 			btn4.setIcon(FontAwesome.STAR);
 			btn4.addStyleName("calificacion-estilos");
 			btn4.addStyleName(ValoTheme.BUTTON_BORDERLESS);
-			hLayout.addStyleName("contenedor-estilos");
-			hLayout.addComponents(btn,btn1,btn2,btn3,btn4);
-			vLayout.addComponents(lbl,hLayout);
-			
+		
+			,btn1,btn2,btn3,btn4);
+			vLayout.addComponents(lbl,hLayout);*/
+				vLayout.addComponents(lbl,hLayout);
 		}
 		
 		

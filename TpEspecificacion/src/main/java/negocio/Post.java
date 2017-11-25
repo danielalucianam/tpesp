@@ -28,11 +28,11 @@ public class Post{
 	public static final String NAME = "Post";
 	String contenido ;
 	
-	//@ManyToOne (cascade = CascadeType.ALL)
-	//Usuario usuarioDueño;
+	@ManyToOne (cascade = CascadeType.ALL)
+	Usuario usuarioDueño;
 	
 	public	Post() {
-		
+		 fechaCreacion = LocalDate.now();
 	}
 	
 	public void setId(long id){
@@ -50,10 +50,9 @@ public class Post{
 		this.contenido=contenido;
 	}
 	
-	/*public void setUsuario(Usuario u){
+	public void setUsuario(Usuario u){
 		usuarioDueño= u;
-		
-	}*/
+	}
 	
 	public void setCalificacion(int calificacion) {
 		this.calificacion= calificacion;

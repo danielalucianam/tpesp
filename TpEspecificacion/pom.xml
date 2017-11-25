@@ -40,7 +40,7 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-		</dependencies>
+					</dependencies>
 	</dependencyManagement>
 
 	<dependencies>
@@ -66,6 +66,8 @@
 			<groupId>com.vaadin</groupId>
 			<artifactId>vaadin-themes</artifactId>
 		</dependency>
+		
+	
 	</dependencies>
 
 	<build>
@@ -136,10 +138,8 @@
 			</activation>
 
 			<repositories>
-				<repository>
-					<id>vaadin-prereleases</id>
-					<url>http://maven.vaadin.com/vaadin-prereleases</url>
-				</repository>
+				
+				
 				<repository>
 					<id>vaadin-snapshots</id>
 					<url>https://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
@@ -149,6 +149,10 @@
 					<snapshots>
 						<enabled>true</enabled>
 					</snapshots>
+				</repository>
+				<repository>
+					<id>vaadin-prereleases</id>
+					<url>http://maven.vaadin.com/vaadin-prereleases</url>
 				</repository>
 			</repositories>
 			<pluginRepositories>

@@ -54,11 +54,11 @@ public class IngresoUsuario extends VerticalLayout implements View {
 					@Override
 		            public void buttonClick(ClickEvent event) {
 						
-						if(usuarioService.loginUsuario(username.getValue(), password.getValue()))
+						//if(usuarioService.loginUsuario(username.getValue(), password.getValue()))
 						getUI().getNavigator().navigateTo(MenuPrincipal.NAME);
 		            
-						else 
-						Notification.show("El usuario ingresado no es válido");
+						//else 
+						//Notification.show("El usuario ingresado no es válido");
 					
 					}
 		        });
