@@ -1,5 +1,6 @@
 package service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import daos.iface.DAOPost;
@@ -24,14 +25,21 @@ public class PostService {
 		return daoPost.getAll();
 	}
 	
-	public  void crearPost(String contenido) {
-		Post post = new Post();
-		post.setContenido(contenido);
-		daoPost.save(post);
-		
+//	public  void crearPost(String contenido) {
+//		Post post = new Post();
+//		post.setContenido(contenido);
+//		daoPost.save(post);
+	
+	public Post getEmptyPost() {
+		Post toRet = new Post ();
+		toRet.setFechaCreacion(LocalDate.now());
+		return toRet;
 		
 	}
 	
+	public void save(Post posteo){
+		daoPost.save(posteo);
+	}
 	
 
 }

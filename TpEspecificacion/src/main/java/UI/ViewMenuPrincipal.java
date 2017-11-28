@@ -10,14 +10,14 @@ import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.themes.ValoTheme;
 
-public class MenuPrincipal  extends VerticalLayout implements View {
+public class ViewMenuPrincipal  extends VerticalLayout implements View {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	public static final String NAME = "Menu";
-	public	MenuPrincipal() {
+	public	ViewMenuPrincipal() {
 		setSizeFull();
 		HorizontalLayout hLayout = new HorizontalLayout();
 	
@@ -26,8 +26,8 @@ public class MenuPrincipal  extends VerticalLayout implements View {
 				@Override
 	            public void buttonClick(ClickEvent event) {
 					
-					getUI().getNavigator().addView(VisualizarPost.NAME, new VisualizarPost());
-					getUI().getNavigator().navigateTo(VisualizarPost.NAME);
+					getUI().getNavigator().addView(ViewAllPost.NAME, new ViewAllPost());
+					getUI().getNavigator().navigateTo(ViewAllPost.NAME);
 				}
 					
 	            
@@ -42,7 +42,7 @@ public class MenuPrincipal  extends VerticalLayout implements View {
 			Button botonCrear = new Button("Crear Post", new Button.ClickListener(){
 			@Override
 			public void buttonClick(ClickEvent event) {
-				getUI().getNavigator().navigateTo(Perfil.NAME);
+				getUI().getNavigator().navigateTo(ViewNewPost.NAME);
 				
 			}
 		});
@@ -71,7 +71,7 @@ public class MenuPrincipal  extends VerticalLayout implements View {
 
 			@Override
 			public void buttonClick(ClickEvent event) {
-				getUI().getNavigator().navigateTo(VisualizadorEmisiones.NAME);
+				getUI().getNavigator().navigateTo(ViewEmisiones.NAME);
 				
 			}
 		});
@@ -81,7 +81,18 @@ public class MenuPrincipal  extends VerticalLayout implements View {
 		emisiones.addStyleName(ValoTheme.BUTTON_BORDERLESS);
 		emisiones.addStyleName(ValoTheme.BUTTON_ICON_ALIGN_TOP);
 		
-		Button salir = new Button("Salir");
+		Button salir = new Button("Salir", new Button.ClickListener(){
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void buttonClick(ClickEvent event) {
+				getUI().getNavigator().navigateTo(ViewLogin.NAME);
+				
+			}
+		});
 		salir.setIcon(FontAwesome.SIGN_OUT);
 		salir.addStyleName("estilo-uno");
 		salir.addStyleName("font-awesome-variants");

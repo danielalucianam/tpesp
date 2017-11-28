@@ -21,6 +21,5 @@ public class DAOHibernate<T> implements DAO<T> {
 		entityManager.persist(t);
 		entityManager.getTransaction().commit();
 		entityManager.close();
-		
-	}
+			}
 }

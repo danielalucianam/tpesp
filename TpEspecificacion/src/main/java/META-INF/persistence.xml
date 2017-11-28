@@ -13,7 +13,6 @@
         <description>
             Persistence unit para JPA
         </description>
-
       
         <class>org.hibernate.tutorial.em.Usuario</class>        
         <class>org.hibernate.tutorial.em.Post</class>

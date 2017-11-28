@@ -5,13 +5,13 @@ package daos.imp;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-
-import daos.iface.DAOPost;
 import daos.iface.DAOUsuario;
 import negocio.Usuario;
 
 public class DAOUsuarioHibernate extends DAOHibernate<Usuario> implements DAOUsuario {
 
+	
+	public DAOUsuarioHibernate(){}
 	@Override
 	public boolean isUsernameInUse(String username) {
 		List<Usuario> usuarios = getAll();

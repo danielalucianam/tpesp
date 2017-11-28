@@ -34,16 +34,21 @@ public class MyUI extends UI {
     protected void init(VaadinRequest request) {
     	getPage().setTitle("Ejemplo de navegación");
     	navigator = new Navigator(this, this);
-    	navigator.addView(IngresoUsuario.NAME, new IngresoUsuario());
-    	navigator.addView(Perfil.NAME, new Perfil());
-    	navigator.addView(MenuPrincipal.NAME, new MenuPrincipal());
-        navigator.addView(RegistroUsuario.NAME, new RegistroUsuario());
-        navigator.addView(VisualizadorEmisiones.NAME, new VisualizadorEmisiones());
+    	navigator.addView(ViewLogin.NAME, new ViewLogin());
+    	navigator.addView(ViewNewPost.NAME, new ViewNewPost());
+    	navigator.addView(ViewMenuPrincipal.NAME, new ViewMenuPrincipal());
+        navigator.addView(ViewRegistro.NAME, new ViewRegistro());
+        navigator.addView(ViewEmisiones.NAME, new ViewEmisiones());
        }
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
     @VaadinServletConfiguration(ui = MyUI.class, productionMode = false)
     public static class MyUIServlet extends VaadinServlet {
-    }
+
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
+    } 
     
     public  Navigator getNavigator() {
     	return navigator;

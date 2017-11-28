@@ -9,24 +9,28 @@ import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.themes.ValoTheme;
 
+import negocio.Usuario;
+import service.PostService;
 import service.UsuarioService;
 
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.PasswordField;
 
-public class IngresoUsuario extends VerticalLayout implements View {
+
+public class ViewLogin extends VerticalLayout implements View {
 		/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 		public static final String NAME = "";
 		private UsuarioService usuarioService;
-			public IngresoUsuario() {
+			public ViewLogin() {
 				usuarioService = UsuarioService.getService();
 				init();
 				this.setSizeFull(); 
-		    
+		
+
 }
 			private void init() {
 				
@@ -54,11 +58,15 @@ public class IngresoUsuario extends VerticalLayout implements View {
 					@Override
 		            public void buttonClick(ClickEvent event) {
 						
-						//if(usuarioService.loginUsuario(username.getValue(), password.getValue()))
-						getUI().getNavigator().navigateTo(MenuPrincipal.NAME);
-		            
-						//else 
-						//Notification.show("El usuario ingresado no es válido");
+						System.out.println("Hasta acá");
+						
+						if(usuarioService.loginUsuario(username.getValue(), password.getValue())) {
+						getUI().getNavigator().navigateTo(ViewMenuPrincipal.NAME);
+						username.clear();
+						password.clear();
+						}
+						else 
+						Notification.show("El usuario ingresado no es válido");
 					
 					}
 		        });
@@ -75,7 +83,7 @@ public class IngresoUsuario extends VerticalLayout implements View {
 						@Override
 			            public void buttonClick(ClickEvent event) {
 							
-							getUI().getNavigator().navigateTo(RegistroUsuario.NAME);
+							getUI().getNavigator().navigateTo(ViewRegistro.NAME);
 							}
 							
 			            

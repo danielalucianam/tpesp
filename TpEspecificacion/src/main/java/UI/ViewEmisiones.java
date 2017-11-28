@@ -9,14 +9,14 @@ import com.vaadin.ui.Label;
 
 import com.vaadin.ui.VerticalLayout;
 
-public class VisualizadorEmisiones extends VerticalLayout implements View {
+public class ViewEmisiones extends VerticalLayout implements View {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	public static final String NAME = "VisualizarEmisiones";
 	private static final String AnimType = null;
-	public  VisualizadorEmisiones() {
+	public  ViewEmisiones() {
 		setSizeFull();
 		
 		HorizontalLayout hl = new HorizontalLayout();
@@ -45,13 +45,24 @@ public class VisualizadorEmisiones extends VerticalLayout implements View {
 		vl.addComponents(hl,hl1);
 		addComponent(vl);
 		              
+		
+		
+		
 	}
 	
 
 	@Override
 	public void enter(ViewChangeEvent event) {
 		// TODO Auto-generated method stub
-		
+	}
+	
+	public void pausa (){
+		try {
+			Thread.sleep(5000);
+			}
+		catch(Exception e) {
+			
+		}
 	}
 	
 }

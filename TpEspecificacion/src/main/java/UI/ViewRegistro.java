@@ -16,7 +16,7 @@ import negocio.DAO;
 import negocio.Usuario;
 import service.UsuarioService;
 
-public class RegistroUsuario extends VerticalLayout implements View {
+public class ViewRegistro extends VerticalLayout implements View {
 
 	
 	/**
@@ -26,7 +26,7 @@ public class RegistroUsuario extends VerticalLayout implements View {
 	public static final String NAME = "Registro";
 	private UsuarioService usuarioService;
 	
-	public	RegistroUsuario() {
+	public	ViewRegistro() {
 		usuarioService = UsuarioService.getService();
 		init();
 		setSizeFull();
@@ -66,7 +66,7 @@ public class RegistroUsuario extends VerticalLayout implements View {
 					
 					Notification n = new Notification("Usuario Registrado", ValoTheme.NOTIFICATION_SUCCESS);
 					
-					getUI().getNavigator().navigateTo(IngresoUsuario.NAME);
+					getUI().getNavigator().navigateTo(ViewLogin.NAME);
 				}
 			
 				else

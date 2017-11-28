@@ -1,38 +1,44 @@
 package negocio;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-import com.vaadin.ui.Button;
-import com.vaadin.ui.Notification;
-import com.vaadin.ui.TextArea;
-import com.vaadin.ui.VerticalLayout;
+
+
 @Entity
 public class Post{
 	/**
 	 * 
 	 */
-	private int calificacion;
+
+	private double calificacion;
+	
+//	private enum Estrella {
+//		OneStar, TwoStar, ThreeStar, FourStar, FiveStar
+//	}
+	
 	private LocalDate fechaCreacion;
 	@Id
 	@GeneratedValue
 	private long idPost;
-	
-	
 	private static final long serialVersionUID = 1L;
 	public static final String NAME = "Post";
 	String contenido ;
 	
-	@ManyToOne (cascade = CascadeType.ALL)
+
+	
+	@ManyToOne
 	Usuario usuarioDueño;
 	
 	public	Post() {
 		 fechaCreacion = LocalDate.now();
+		 calificacion = 0;
+		
 	}
 	
 	public void setId(long id){
@@ -54,20 +60,26 @@ public class Post{
 		usuarioDueño= u;
 	}
 	
-	public void setCalificacion(int calificacion) {
+	public Usuario getUsuarioDueño() {
+		return usuarioDueño;
+	}
+
+	
+	public void setCalificacion(double calificacion) {
 		this.calificacion= calificacion;
 	}
 	
-	public int getCalificacion() {
+	public LocalDate getFechaCreacion() {
+		return fechaCreacion;
+	}
+
+	public void setFechaCreacion(LocalDate fechaCreacion) {
+		this.fechaCreacion = fechaCreacion;
+	}
+
+	public double getCalificacion() {
 		return this.calificacion;
 	}
 	
-	public void setFecha(LocalDate fecha) {
-		this.fechaCreacion=fecha;
-		
-	}
-
-	public LocalDate getFecha() {
-		return this.fechaCreacion;
-	}
+	
 }

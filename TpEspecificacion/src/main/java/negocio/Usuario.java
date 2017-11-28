@@ -14,10 +14,10 @@ import org.hibernate.annotations.NaturalId;
 
 @Entity
 public class Usuario {
-	@NaturalId
+	
 	String username;
 	String correo;
-	@NaturalId
+	
 	String cuilCuit;
 	String contraseña;
 	@Id

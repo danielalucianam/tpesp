@@ -6,6 +6,7 @@ import com.vaadin.event.ItemClickEvent;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.FileResource;
+import com.vaadin.server.FontAwesome;
 import com.vaadin.server.VaadinService;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
@@ -25,49 +26,54 @@ import com.vaadin.ui.themes.ValoTheme;
 import negocio.DAO;
 import negocio.Post;
 import service.PostService;
+import service.UsuarioService;
 
 
-public class Perfil extends VerticalLayout implements View {
+public class ViewNewPost extends VerticalLayout implements View {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	public static final String NAME = "Perfil";
 	private PostService postService;
-		public Perfil() {
+	private UsuarioService usuarioService;
+		public ViewNewPost() {
 			 postService = PostService.getService();
+			 usuarioService = UsuarioService.getService();
 			init();
 			setSizeFull();
 			
-		}
-		
-		private void init() {
-			HorizontalLayout layout = new HorizontalLayout();
-			GridLayout grid = new GridLayout(4,4);
-			grid.setWidth("400px");
-			grid.setHeight("400px");
 			
-			 	Button MiPerfil = new Button("Menu", new Button.ClickListener(){
+		}
+				
+		private void init() {
+			HorizontalLayout horizontalLayout= new HorizontalLayout();
+			VerticalLayout verticalLayout = new VerticalLayout();
+			
+			
+				Label nuevoPost = new Label("Nuevo Post");
+			 	Button Menu= new Button("", new Button.ClickListener(){
+					/**
+					 * 
+					 */
+					private static final long serialVersionUID = 1L;
+
 					@Override
 					public void buttonClick(ClickEvent event) {
-						getUI().getNavigator().navigateTo(MenuPrincipal.NAME);
+						getUI().getNavigator().navigateTo(ViewMenuPrincipal.NAME);
 					
 					}
 				});
-				MiPerfil.setStyleName(ValoTheme.BUTTON_LINK);
+			Menu.addStyleName(ValoTheme.BUTTON_BORDERLESS);
 			
-				
-				layout.addComponent(MiPerfil);
+			Menu.setIcon(FontAwesome.TH_LIST);
+			horizontalLayout.setStyleName("hl-estilo");
+			horizontalLayout.addComponents(nuevoPost,Menu);
 			
-				grid.addComponent(layout,0, 0, 1, 1);
+			verticalLayout.addComponents(horizontalLayout, nuevaAreaPost());
 		
 			
-               grid.addComponent(nuevaAreaPost(),0,2,0,2);
-              
-           
-		
-		
-			addComponent(grid);
+			addComponent(verticalLayout);
 
 			
 		     
@@ -78,16 +84,26 @@ public class Perfil extends VerticalLayout implements View {
 		
 			TextArea tf = new TextArea();
 			tf.setMaxLength(300);
+			tf.setHeight("200px");
+			tf.setWidth("300px");
+			
 			
 			
 		
 			
 					Button button = new Button("Aceptar", new Button.ClickListener(){
+				/**
+						 * 
+						 */
+						private static final long serialVersionUID = 1L;
+
 				@Override
 				public void buttonClick(ClickEvent event) {
-					postService.crearPost(tf.getValue());
+					Post posteo = postService.getEmptyPost();
+					posteo.setContenido(tf.getValue());
+					posteo.setUsuario(usuarioService.getLoggedUser());
+					postService.save(posteo);
 					tf.clear();
-					
 				}
 			});
 			componente.addComponents(tf,button);
